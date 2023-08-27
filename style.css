@@ -25,6 +25,16 @@ body {
   src: url(font/pixel.otf) format("truetype");
 }
 
+@font-face {
+  font-family: "linux";
+  src: url(font/linux.otf);
+}
+
+@font-face {
+  font-family: "blox";
+  src: url(font/Blox2.ttf);
+}
+
 /*----------------------------CONTACT-----------rgb(106, 90, 205)---------------------*/
 
 *,
@@ -266,10 +276,19 @@ body {
 
 /*--------------------------------------------------------*/
 
-/* Responsive Styles */
 /* SMAL DEVICE */
 @media screen and (max-width: 768px) {
   /*------------------------LANGUAGE--------------------------------*/
+  .button {
+    font-size: 1em;
+    letter-spacing: 1px;
+    left: 25%;
+    top: 25%;
+  }
+  .button::before {
+    transform: perspective(0.9em) rotateX(40deg) scale(0.9, 0.8);
+  }
+
   .lang_container {
     position: fixed;
   }
