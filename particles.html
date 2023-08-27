@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bouncing Particles</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(to bottom, #001f3f, #ff4136);
+      }
+      .down {
+        position: fixed;
+        margin-left: 45%;
+        margin-top: 15%;
+      }
+      .cv {
+        position: fixed;
+        margin-left: 45%;
+        margin-top: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      const scene = new THREE.Scene();
+
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      const numParticles = 1500;
+      const particlesGroup = new THREE.Group();
+
+      const particleGeometry = new THREE.CircleGeometry(0.5, 5);
+      const particleMaterial = new THREE.MeshBasicMaterial({ color: 0xffff });
+
+      for (let i = 0; i < numParticles; i++) {
+        const particle = new THREE.Mesh(particleGeometry, particleMaterial);
+        particle.position.set(
+          Math.random() * 30 - 15,
+          Math.random() * 30 - 15,
+          Math.random() * 30 - 15
+        );
+        particle.velocity = new THREE.Vector3(
+          Math.random() * 0.1 - 0.05,
+          Math.random() * 0.1 - 0.05,
+          Math.random() * 0.1 - 0.05
+        );
+        particlesGroup.add(particle);
+      }
+
+      scene.add(particlesGroup);
+
+      camera.position.z = 40;
+
+      function animateParticles() {
+        requestAnimationFrame(animateParticles);
+
+        particlesGroup.children.forEach((particle) => {
+          particle.position.add(particle.velocity);
+          if (
+            particle.position.x > 15 ||
+            particle.position.x < -15 ||
+            particle.position.y > 15 ||
+            particle.position.y < -15 ||
+            particle.position.z > 15 ||
+            particle.position.z < -15
+          ) {
+            particle.velocity.negate();
+          }
+        });
+
+        renderer.render(scene, camera);
+      }
+
+      animateParticles();
+    </script>
+  </body>
+</html>

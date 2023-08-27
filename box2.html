@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Three.js Scene</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+      <script>
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(
+          1000,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          1000
+        );
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const shapes = [
+          new THREE.BoxGeometry(10, 10, 10),
+          new THREE.SphereGeometry(10, 32, 32),
+          new THREE.ConeGeometry(10, 20, 32),
+          new THREE.CylinderGeometry(10, 10, 20, 32),
+          new THREE.TorusGeometry(10, 3, 16, 100),
+          new THREE.TorusKnotGeometry(10, 3, 100, 16),
+          new THREE.DodecahedronGeometry(10),
+          new THREE.IcosahedronGeometry(10),
+          new THREE.OctahedronGeometry(10),
+          new THREE.TetrahedronGeometry(10),
+        ];
+
+        const materials = [
+          new THREE.MeshPhongMaterial({ color: 0x0066ff, shininess: 100 }),
+          new THREE.MeshLambertMaterial({ color: 0xff6600, shininess: 50 }),
+          new THREE.MeshBasicMaterial({ color: 0x00ff00 }),
+        ];
+
+        const numShapes = 50;
+        const shapesGroup = new THREE.Group();
+
+        for (let i = 0; i < numShapes; i++) {
+          const shapeIndex = Math.floor(Math.random() * shapes.length);
+          const materialIndex = Math.floor(Math.random() * materials.length);
+
+          const shape = new THREE.Mesh(
+            shapes[shapeIndex],
+            materials[materialIndex]
+          );
+          shape.position.set(
+            Math.random() * 120 - 60,
+            Math.random() * 120 - 60,
+            -i * 30
+          );
+          shape.rotation.set(
+            Math.random() * Math.PI,
+            Math.random() * Math.PI,
+            Math.random() * Math.PI
+          );
+          shapesGroup.add(shape);
+        }
+
+        scene.add(shapesGroup);
+
+        camera.position.z = 300;
+
+        const clock = new THREE.Clock();
+
+        function animateShapes() {
+          requestAnimationFrame(animateShapes);
+
+          const elapsedTime = clock.getElapsedTime();
+
+          shapesGroup.rotation.x += 0.005;
+          shapesGroup.rotation.y += 0.05;
+
+          shapesGroup.children.forEach((shape, index) => {
+            shape.position.z = -index * 30 - elapsedTime * 50;
+          });
+
+          renderer.render(scene, camera);
+        }
+
+        animateShapes();
+      </script>
+    </div>
+  </body>
+</html>

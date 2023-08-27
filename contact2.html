@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact me!</title>
+    <style>
+      @font-face {
+        font-family: "blox";
+        src: url(font/Blox2.ttf);
+      }
+      @font-face {
+        font-family: "pixel";
+        src: url(font/pixel.otf) format("truetype");
+      }
+      @font-face {
+        font-family: "linux";
+        src: url(font/linux.otf);
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(to bottom, #001f3f, #ff4136);
+      }
+
+      .space-traveller {
+        font-family: "linux";
+        color: black;
+        font-size: 2rem;
+        position: fixed;
+        text-decoration: none;
+        text-align: center;
+        margin-left: 4%;
+        margin-top: 10%;
+        transition: all 0.3s ease;
+        margin-bottom: 5px;
+      }
+
+      .click {
+        position: fixed;
+        font-family: "linux";
+        color: black;
+        margin-left: 53rem;
+        margin-top: 37rem;
+        text-decoration: none;
+      }
+      .rabbit {
+        position: fixed;
+        margin-left: 58rem;
+        margin-top: 30rem;
+        width: 70px;
+      }
+
+      .return-home {
+        position: fixed;
+        font-family: "linux";
+        color: black;
+        font-size: 1.9rem;
+        text-decoration: none;
+        margin: 1.8rem;
+        transition: all 0.3s ease;
+      }
+
+      .return-home:hover {
+        letter-spacing: 6px;
+      }
+
+      /*-------------------------logo and name-------------------------*/
+
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+      .logo_container {
+        position: fixed;
+        align-items: center;
+        bottom: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-left: 50%;
+      }
+
+      .logo_image {
+        width: 45px;
+        height: 45px;
+        position: fixed;
+        margin-bottom: 35px;
+      }
+      .logo_text {
+        position: absolute;
+        color: black;
+        font-size: 14px;
+        text-decoration: none;
+        font-family: "linux";
+        margin-bottom: 0;
+      }
+
+      .minText {
+        font-size: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="return-home">Home</a>
+
+    <h1 class="space-traveller">Follow the white rabbit.</h1>
+    <!--
+    <h1 class="space-traveller">
+      1010010 1100101 1100001 1100011 1101000 100000 1101111 1110101 1110100
+      100000 1110100 1101000 1110010 1101111 1110101 1100111 1101000 100000
+      1001100 1101001 1101110 1101011 1100101 1100100 1001001 1101110
+    </h1>
+-->
+
+    <a href="https://www.linkedin.com/feed/"
+      ><img src="foto/rabbit1.png" class="rabbit"
+    /></a>
+
+    <div class="logo_container">
+      <img src="foto/alien4.png" alt="" class="logo_image" />
+      <h1 class="logo_text">
+        SAJAD&nbsp;DAVOUDI<br /><span class="minText"
+          >Creative&nbsp;developer&nbsp;|&nbsp;Tech&nbsp;enthusiast</span
+        >
+      </h1>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      const universe = new THREE.Scene();
+
+      const stardustCamera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+
+      const cosmicRenderer = new THREE.WebGLRenderer();
+      cosmicRenderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(cosmicRenderer.domElement);
+
+      const stardustGeometry = new THREE.CircleGeometry(2, 600);
+      const stardustMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+
+      const stardustTrail = [
+        new THREE.Vector3(-50, 50, 0),
+        new THREE.Vector3(-1, 10, 0),
+        new THREE.Vector3(1, -10, 0),
+      ];
+
+      const starCount = 800;
+      const starCluster = new THREE.Group();
+
+      for (let i = 0; i < starCount; i++) {
+        const star = new THREE.Mesh(stardustGeometry, stardustMaterial);
+        star.position.copy(
+          stardustTrail[Math.floor(Math.random() * stardustTrail.length)]
+        );
+        star.speed = new THREE.Vector3(
+          Math.random() * 0.1 - 0.05,
+          Math.random() * 0.1 - 0.05,
+          Math.random() * 0.1 - 0.05
+        );
+        starCluster.add(star);
+      }
+
+      universe.add(starCluster);
+
+      stardustCamera.position.z = 10;
+
+      function animateStars() {
+        requestAnimationFrame(animateStars);
+
+        starCluster.children.forEach((star) => {
+          star.position.add(star.speed);
+          if (
+            star.position.x > 5 ||
+            star.position.x < -5 ||
+            star.position.y > 10 ||
+            star.position.y < -10
+          ) {
+            star.speed.negate();
+          }
+        });
+
+        cosmicRenderer.render(universe, stardustCamera);
+      }
+
+      animateStars();
+    </script>
+  </body>
+</html>
