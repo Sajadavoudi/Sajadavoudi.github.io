@@ -35,6 +35,10 @@ body {
   src: url(font/Blox2.ttf);
 }
 
+@font-face {
+  font-family: "space";
+  src: url(font/Spaced\ OTF.otf);
+}
 /*----------------------------CONTACT-----------rgb(106, 90, 205)---------------------*/
 
 *,
@@ -45,8 +49,8 @@ body {
 
 .button {
   font-size: 1.2em;
-  font-family: system-ui;
-  /*font-family: pixel;*/
+  /*font-family: system-ui;*/
+  font-family: "space";
 
   letter-spacing: 2px;
 
@@ -142,6 +146,7 @@ body {
   font-size: 14px;
   text-decoration: none;
   font-family: "Roboto" !important;
+  /*font-family: "space";*/
   margin-bottom: 0;
 }
 
@@ -153,17 +158,24 @@ body {
 
 .navbar {
   background-color: transparent;
-  font-family: "Roboto" !important;
+  font-family: "space";
+  /*font-family: "Roboto" !important;*/
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   margin-top: 2%;
-  margin-left: 1%;
+  margin-left: 0%;
   display: flex;
   justify-content: center;
-  font-family: "Roboto" !important;
   gap: 0.5rem;
+}
+
+.navbar a:nth-child(1) {
+  margin-top: 0.3%;
+}
+.navbar a:nth-child(3) {
+  margin-top: 0.3%;
 }
 
 .navbar a {
@@ -171,7 +183,8 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
-  color: black;
+  /*color: black;*/
+  color: var(--clr-neon);
 }
 
 .first_W {
@@ -265,7 +278,7 @@ body {
   position: fixed;
 }
 .discuss p {
-  font-family: "Roboto" !important;
+  font-family: "space";
   font-size: 1.1rem;
   letter-spacing: 4px;
   font-weight: bold;
@@ -278,17 +291,71 @@ body {
 
 /* SMAL DEVICE */
 @media screen and (max-width: 768px) {
-  /*------------------------LANGUAGE--------------------------------*/
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  /*------------------------CONTACT--------------------------------*/
   .button {
-    font-size: 1em;
+    font-family: "space";
+    font-size: 0.95em;
     letter-spacing: 1px;
-    left: 25%;
-    top: 25%;
+    left: 13%;
+    top: 50%;
   }
   .button::before {
-    transform: perspective(0.9em) rotateX(40deg) scale(0.9, 0.8);
+    transform: perspective(0.8em) rotateX(40deg) scale(0.9, 0.8);
   }
 
+  /*-------------------------logo and name-------------------------*/
+  .logo_container {
+    margin-bottom: 3%;
+  }
+
+  .logo_image {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .logo_text {
+    font-size: 12px;
+  }
+
+  .minText {
+    font-size: 10px;
+  }
+  /*--------------------------NAV BAR------------------------*/
+  .navbar {
+    margin-top: 3%;
+  }
+
+  .navbar a:nth-child(1) {
+    margin-top: 0;
+  }
+  .navbar a:nth-child(3) {
+    margin-top: 0;
+  }
+
+  .navbar a {
+    font-family: "space";
+    color: var(--clr-neon);
+    font-size: 16px;
+  }
+
+  .first_W {
+    font-size: 1.3em;
+  }
+
+  .navbar a:hover {
+    color: var(--clr-neon);
+    letter-spacing: 0.5px;
+    font-weight: bold;
+  }
+
+  /*------------------------LANGUAGE--------------------------------*/
+  .language {
+  }
   .lang_container {
     position: fixed;
   }
@@ -314,38 +381,59 @@ body {
     top: 65%;
   }
   .lang_container img:nth-child(5) {
-    left: 32%;
+    left: 25%;
     top: 72%;
   }
   .lang_container img:nth-child(6) {
-    left: 44%;
+    left: 38%;
     top: 72%;
   }
   .lang_container img:nth-child(7) {
-    left: 56%;
+    left: 51%;
     top: 72%;
   }
 
   .lang_container img:nth-child(8) {
-    left: 48%;
-    top: 79%;
+    left: 64%;
+    top: 72%;
   }
+
   .lang_container img:nth-child(9) {
-    display: none;
-  }
-  .lang_container img:nth-child(10) {
     left: 38%;
     top: 79%;
   }
 
+  .lang_container img:nth-child(10) {
+    display: none;
+  }
+
+  .lang_container img:nth-child(11) {
+    left: 51%;
+    top: 79%;
+  }
+
   /*-------------------------DISCUSS & CONTACT-------------------------------*/
+  .discuss {
+  }
+  .dis {
+    position: fixed;
+    letter-spacing: 0px;
+    margin-left: -33%;
+    margin-top: 6%;
+  }
+  .discuss p {
+    text-align: center;
+    letter-spacing: 0px;
+    font-size: 0.9rem;
 
-  /*--------------------------INTRO------------------------*/
-
-  /*--------------------------------------------------------*/
-  /*--------------------------------------------------------*/
-  /*--------------------------------------------------------*/
-  /*--------------------------------------------------------*/
+    /*display: none;
+    position: fixed;
+    left: 1%;
+    margin-left: 3%;
+    margin-top: 1%;
+    font-family: "space";
+    */
+  }
 }
 
 /*----------------------MEDIUM DEVICE----------------------------------*/
