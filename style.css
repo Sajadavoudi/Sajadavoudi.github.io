@@ -14,10 +14,16 @@ body {
 }
 
 :root {
-  --clr-neon: rgb(254, 110, 144);
+  /*--clr-neon: rgb(4, 110, 44);
+  --clr-neon: rgb(102, 0, 0);
+  --clr-neon: rgb(254, 110, 44);*/
+
+  --clr-neon: rgb(254, 110, 44);
   --clr-bg: rgba(1, 1, 1, 1);
   --clr-white: rgba(255, 255, 255, 1);
   --glow-color: hsl(186 100% 69%);
+
+  --clr-red: rgb(10, 103, 79);
 }
 
 @font-face {
@@ -93,7 +99,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  /*box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);*/
+  box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
   opacity: 0;
   background: var(--clr-neon);
   z-index: -1;
@@ -285,13 +291,18 @@ body {
   color: black;
 }
 
-/*---------------------INTRO-----------------------------------*/
-
-/*--------------------------------------------------------*/
+/*888888888888888888888888888888888888888888888888888888888*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*---------------------------------------------------------*/
+/*888888888888888888888888888888888888888888888888888888888*/
 
 /* SMAL DEVICE */
-@media screen and (max-width: 845px) {
-
+@media screen and (max-width: 767px) {
+  body {
+    height: 50vh;
+    width: 100vw;
+  }
   /*------------------------CONTACT--------------------------------*/
   .button {
     font-family: "space";
@@ -299,32 +310,41 @@ body {
     letter-spacing: 1px;
     left: 14%;
     top: 50%;
-    box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
-    transform: perspective(0.3em) rotateX(40deg) scale(0.9, 0.8);
-  }
-  /* ino gpt dad
-  .button:hover,
-  .button:focus {
-    color: var(--clr-bg);
-    text-shadow: none;
+    box-shadow: 0 0 4em 5.5em var(--clr-red), 0 0 9em 4.2em var(--clr-white);
+    color: var(--clr-red);
+    border: var(--clr-red) 1px solid;
+    padding: 0.25em 1em;
+    border-radius: 0.55em;
+
+    text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
+
+    /*shadow dar halati ke do rang nabashe : box-shadow: 0 0 4em 6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);*/
+    /*transform: perspective(-1em) rotateX(400deg) scale(100.9, 110.8);*/
   }
 
-  .button:hover::before,
-  .button:focus::before {
-    opacity: 1;
-    transform: perspective(0.8em) rotateX(400deg) scale(0.9, 0.8);
-    transition: transform 0.5s linear;
-  }
-    .button:hover::after,
-  .button:focus::after {
-    opacity: 1;
-  }*/
-  /*
   .button::before {
+    background: transparent;
+  }
+
+  /* negash kon, you will get it!
+  .button::before {
+    box-shadow: 0 0 4em 6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
     transform: perspective(0.8em) rotateX(40deg) scale(0.9, 0.8);
   }*/
 
+  /*ORIGINAL!
+  .button {
+    font-family: "space";
+    font-size: 0.95em;
+    letter-spacing: 1px;
+    left: 15%;
+    top: 50%;
+    /*box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
+  }
 
+  .button::before {
+    transform: perspective(0.2em) rotateX(40deg) scale(0.9, 0.8);
+  }*/
 
   /*-------------------------logo and name-------------------------*/
   .logo_container {
@@ -345,6 +365,9 @@ body {
     font-size: 10px;
   }
   /*--------------------------NAV BAR------------------------*/
+  .navbar a span {
+    color: var(--clr-red);
+  }
   .navbar {
     margin-top: 3%;
   }
@@ -384,51 +407,51 @@ body {
   }
   .lang_container img:nth-child(1) {
     left: 64%;
-    top: 65%;
+    top: 62%;
   }
 
   .lang_container img:nth-child(2) {
     left: 51%;
-    top: 65%;
+    top: 62%;
   }
   .lang_container img:nth-child(3) {
     left: 38%;
-    top: 65%;
+    top: 62%;
   }
   .lang_container img:nth-child(4) {
     left: 25%;
-    top: 65%;
+    top: 62%;
   }
   .lang_container img:nth-child(5) {
     left: 25%;
-    top: 72%;
+    top: 68%;
   }
   .lang_container img:nth-child(6) {
     left: 38%;
-    top: 72%;
+    top: 68%;
   }
   .lang_container img:nth-child(7) {
     left: 51%;
-    top: 72%;
+    top: 68%;
   }
 
   .lang_container img:nth-child(8) {
-    display: none;
+    left: 64%;
+    top: 68%;
   }
 
   .lang_container img:nth-child(9) {
     left: 38%;
-    top: 79%;
+    top: 74%;
   }
 
   .lang_container img:nth-child(10) {
-    left: 64%;
-    top: 72%;
+    display: none;
   }
 
   .lang_container img:nth-child(11) {
     left: 51%;
-    top: 79%;
+    top: 73%;
   }
 
   /*-------------------------DISCUSS & CONTACT-------------------------------*/
@@ -436,9 +459,9 @@ body {
   }
   .dis {
     position: fixed;
-    letter-spacing: 0px;
+    letter-spacing: 1px;
     margin-left: -33%;
-    margin-top: 6%;
+    margin-top: 1%;
   }
   .discuss p {
     text-align: center;
@@ -453,6 +476,26 @@ body {
     font-family: "space";
     */
   }
-}
 
-/*----------------------MEDIUM DEVICE----------------------------------*/
+  /*----------------------ALIEN PHOTO-----------------*/
+  .alien {
+    width: 10%;
+  }
+
+  .alien_container img:nth-child(1) {
+    left: 45%;
+    top: 29%;
+  }
+  .alien_container img:nth-child(2) {
+    left: 36%;
+    top: 27%;
+  }
+  .alien_container img:nth-child(3) {
+    left: 54%;
+    top: 27%;
+  }
+  .alien_container img:nth-child(4) {
+    left: 55%;
+    top: 20%;
+  }
+}
