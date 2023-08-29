@@ -297,11 +297,29 @@ body {
     font-family: "space";
     font-size: 0.95em;
     letter-spacing: 1px;
-    left: 13%;
+    left: 14%;
     top: 50%;
   }
+  .button:hover,
+  .button:focus {
+    color: var(--clr-bg);
+    text-shadow: none;
+  }
+
+  .button:hover::before,
+  .button:focus::before {
+    opacity: 1;
+    transform: perspective(0.8em) rotateX(400deg) scale(0.9, 0.8);
+    transition: transform 0.5s linear;
+  }
+
   .button::before {
     transform: perspective(0.8em) rotateX(40deg) scale(0.9, 0.8);
+  }
+
+  .button:hover::after,
+  .button:focus::after {
+    opacity: 1;
   }
 
   /*-------------------------logo and name-------------------------*/
