@@ -299,7 +299,9 @@ body {
     letter-spacing: 1px;
     left: 14%;
     top: 50%;
+    box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
   }
+  /* ino gpt dad
   .button:hover,
   .button:focus {
     color: var(--clr-bg);
@@ -312,15 +314,16 @@ body {
     transform: perspective(0.8em) rotateX(400deg) scale(0.9, 0.8);
     transition: transform 0.5s linear;
   }
-
-  .button::before {
-    transform: perspective(0.8em) rotateX(40deg) scale(0.9, 0.8);
-  }
-
-  .button:hover::after,
+    .button:hover::after,
   .button:focus::after {
     opacity: 1;
-  }
+  }*/
+  /*
+  .button::before {
+    transform: perspective(0.8em) rotateX(40deg) scale(0.9, 0.8);
+  }*/
+
+
 
   /*-------------------------logo and name-------------------------*/
   .logo_container {
