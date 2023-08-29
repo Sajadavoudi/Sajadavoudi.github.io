@@ -300,6 +300,7 @@ body {
     left: 14%;
     top: 50%;
     box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
+    transform: perspective(0.8em) rotateX(40deg) scale(0.9, 0.8);
   }
   /* ino gpt dad
   .button:hover,
