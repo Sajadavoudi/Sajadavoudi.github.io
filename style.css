@@ -289,12 +289,9 @@ body {
 
 /*--------------------------------------------------------*/
 
-/* SMAL DEVICE ((max-width: 768px))*/
-@media screen and (max-width: 900px) {
-  body {
-    width: 100vw;
-    height: 100vh;
-  }
+/* SMAL DEVICE */
+@media screen and (max-width: 845px) {
+
   /*------------------------CONTACT--------------------------------*/
   .button {
     font-family: "space";
@@ -394,8 +391,7 @@ body {
   }
 
   .lang_container img:nth-child(8) {
-    left: 64%;
-    top: 72%;
+    display: none;
   }
 
   .lang_container img:nth-child(9) {
@@ -404,7 +400,8 @@ body {
   }
 
   .lang_container img:nth-child(10) {
-    display: none;
+    left: 64%;
+    top: 72%;
   }
 
   .lang_container img:nth-child(11) {
