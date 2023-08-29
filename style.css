@@ -14,16 +14,18 @@ body {
 }
 
 :root {
-  /*--clr-neon: rgb(4, 110, 44);
-  --clr-neon: rgb(102, 0, 0);
-  --clr-neon: rgb(254, 110, 44);*/
+  /*rgb(4, 110, 44);
+  rgb(102, 0, 0);
+  rgb(254, 110, 44);
+  rgba(148, 8, 1, 1)
+  rgba(129, 26, 113)*/
 
   --clr-neon: rgb(254, 110, 44);
   --clr-bg: rgba(1, 1, 1, 1);
   --clr-white: rgba(255, 255, 255, 1);
   --glow-color: hsl(186 100% 69%);
 
-  --clr-red: rgb(102, 0, 0);
+  --clr-red: rgba(129, 26, 113);
 }
 
 @font-face {
@@ -299,14 +301,18 @@ body {
 
 /* SMAL DEVICE */
 @media screen and (max-width: 767px) {
-  /*------------------------CONTACT--------------------------------*/
+  .body {
+    width: 0vw;
+    height: 50vh;
+  }
+  /*------------------------CONTACT--------------- -----------------*/
   .button {
     font-family: "space";
     font-size: 0.95em;
     letter-spacing: 1px;
-    left: 15%;
+    left: 14%;
     top: 50%;
-    box-shadow: 0 0 5em 6.5em var(--clr-red), 0 0 9em 5.2em var(--clr-white);
+    box-shadow: 0 0 18em 6em var(--clr-red), 0 0 19em 3.2em var(--clr-white);
     color: var(--clr-red);
     border: var(--clr-red) 1px solid;
     padding: 0.25em 1em;
@@ -320,6 +326,10 @@ body {
 
   .button::before {
     background: transparent;
+  }
+  .button::after {
+    box-shadow: 0 0 4em 0.6em var(--clr-red), 0 0 1em 0.2em var(--clr-white);
+    background: var(--clr-red);
   }
 
   /* negash kon, you will get it!
@@ -343,9 +353,11 @@ body {
   }*/
 
   /*-------------------------logo and name-------------------------*/
+
   .logo_container {
     justify-content: center;
     bottom: 2%;
+    right: 5%;
   }
 
   .logo_image {
@@ -478,6 +490,7 @@ body {
   /*----------------------ALIEN PHOTO-----------------*/
   .alien {
     width: 10%;
+    display: none;
   }
 
   .alien_container img:nth-child(1) {
