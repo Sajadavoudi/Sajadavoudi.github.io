@@ -290,7 +290,7 @@ body {
 /*--------------------------------------------------------*/
 
 /* SMAL DEVICE */
-@media screen and (max-width: 845px) {
+@media only screen and (width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) {
 
   /*------------------------CONTACT--------------------------------*/
   .button {
