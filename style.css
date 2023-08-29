@@ -23,7 +23,7 @@ body {
   --clr-white: rgba(255, 255, 255, 1);
   --glow-color: hsl(186 100% 69%);
 
-  --clr-red: rgb(10, 103, 79);
+  --clr-red: rgb(102, 0, 0);
 }
 
 @font-face {
@@ -299,10 +299,6 @@ body {
 
 /* SMAL DEVICE */
 @media screen and (max-width: 767px) {
-  body {
-    height: 50vh;
-    width: 100vw;
-  }
   /*------------------------CONTACT--------------------------------*/
   .button {
     font-family: "space";
@@ -310,7 +306,7 @@ body {
     letter-spacing: 1px;
     left: 14%;
     top: 50%;
-    box-shadow: 0 0 4em 5.5em var(--clr-red), 0 0 9em 4.2em var(--clr-white);
+    box-shadow: 0 0 5em 6.5em var(--clr-red), 0 0 9em 5.2em var(--clr-white);
     color: var(--clr-red);
     border: var(--clr-red) 1px solid;
     padding: 0.25em 1em;
@@ -348,17 +344,19 @@ body {
 
   /*-------------------------logo and name-------------------------*/
   .logo_container {
-    margin-bottom: 3%;
+    justify-content: center;
+    bottom: 2%;
   }
 
   .logo_image {
     width: 40px;
     height: 40px;
-    margin-bottom: 30px;
+    bottom: 2%;
   }
 
   .logo_text {
     font-size: 12px;
+    letter-spacing: 1px;
   }
 
   .minText {
