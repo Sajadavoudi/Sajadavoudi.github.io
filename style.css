@@ -304,7 +304,7 @@ body {
     font-family: "space";
     font-size: 0.95em;
     letter-spacing: 1px;
-    left: 14%;
+    left: 15%;
     top: 50%;
     box-shadow: 0 0 5em 6.5em var(--clr-red), 0 0 9em 5.2em var(--clr-white);
     color: var(--clr-red);
