@@ -14,7 +14,7 @@ body {
 }
 
 :root {
-  --clr-neon: rgb(254, 110, 44);
+  --clr-neon: rgb(254, 110, 144);
   --clr-bg: rgba(1, 1, 1, 1);
   --clr-white: rgba(255, 255, 255, 1);
   --glow-color: hsl(186 100% 69%);
