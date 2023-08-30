@@ -25,7 +25,7 @@ body {
   --clr-white: rgba(255, 255, 255, 1);
   --glow-color: hsl(186 100% 69%);
 
-  --clr-red: rgba(129, 26, 113);
+  --clr-red: #7721f6;
 }
 
 @font-face {
@@ -215,7 +215,7 @@ body {
 }
 .alien_container img:nth-child(1) {
   left: 45%;
-  top: 32%;
+  top: 30%;
 }
 .alien_container img:nth-child(2) {
   left: 40%;
@@ -301,15 +301,14 @@ body {
 
 /* SMAL DEVICE */
 @media screen and (max-width: 767px) {
-
   /*------------------------CONTACT--------------- -----------------*/
   .button {
     font-family: "space";
     font-size: 0.95em;
     letter-spacing: 1px;
-    left: 14%;
+    left: 16%;
     top: 50%;
-    box-shadow: 0 0 18em 6em var(--clr-red), 0 0 19em 3.2em var(--clr-white);
+    box-shadow: 0 0 18em 4em var(--clr-red), 0 0 19em 0.5em var(--clr-white);
     color: var(--clr-red);
     border: var(--clr-red) 1px solid;
     padding: 0.25em 1em;
@@ -376,7 +375,7 @@ body {
     color: var(--clr-red);
   }
   .navbar {
-    margin-top: 3%;
+    margin-top: 7%;
   }
 
   .navbar a:nth-child(1) {
@@ -414,42 +413,42 @@ body {
   }
   .lang_container img:nth-child(1) {
     left: 64%;
-    top: 62%;
+    top: 60%;
   }
 
   .lang_container img:nth-child(2) {
     left: 51%;
-    top: 62%;
+    top: 60%;
   }
   .lang_container img:nth-child(3) {
     left: 38%;
-    top: 62%;
+    top: 60%;
   }
   .lang_container img:nth-child(4) {
     left: 25%;
-    top: 62%;
+    top: 60%;
   }
   .lang_container img:nth-child(5) {
     left: 25%;
-    top: 68%;
+    top: 66%;
   }
   .lang_container img:nth-child(6) {
     left: 38%;
-    top: 68%;
+    top: 66%;
   }
   .lang_container img:nth-child(7) {
     left: 51%;
-    top: 68%;
+    top: 66%;
   }
 
   .lang_container img:nth-child(8) {
     left: 64%;
-    top: 68%;
+    top: 66%;
   }
 
   .lang_container img:nth-child(9) {
     left: 38%;
-    top: 74%;
+    top: 72%;
   }
 
   .lang_container img:nth-child(10) {
@@ -458,7 +457,7 @@ body {
 
   .lang_container img:nth-child(11) {
     left: 51%;
-    top: 73%;
+    top: 72%;
   }
 
   /*-------------------------DISCUSS & CONTACT-------------------------------*/
