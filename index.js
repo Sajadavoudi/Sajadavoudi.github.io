@@ -23,7 +23,11 @@ function init() {
       Math.random() * 600 - 300
     );
     star.velocity = 0;
-    star.acceleration = 0.005;
+    if (window.innerWidth < 768) {
+      star.acceleration = 0.05;
+    } else {
+      star.acceleration = 0.005;
+    }
     geoArr.push(star);
   }
   starGeo = new THREE.BufferGeometry().setFromPoints(geoArr);
