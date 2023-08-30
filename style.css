@@ -301,10 +301,7 @@ body {
 
 /* SMAL DEVICE */
 @media screen and (max-width: 767px) {
-  .body {
-    width: 0vw;
-    height: 50vh;
-  }
+
   /*------------------------CONTACT--------------- -----------------*/
   .button {
     font-family: "space";
@@ -357,7 +354,7 @@ body {
   .logo_container {
     justify-content: center;
     bottom: 2%;
-    right: 2.5%;
+    right: 50%;
   }
 
   .logo_image {
@@ -470,8 +467,8 @@ body {
   .dis {
     position: fixed;
     letter-spacing: 1px;
-    margin-left: -33%;
-    margin-top: 1%;
+    right: 15%;
+    top: 54%;
   }
   .discuss p {
     text-align: center;
