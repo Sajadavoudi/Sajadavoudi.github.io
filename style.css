@@ -266,8 +266,7 @@ body {
 }
 
 .lang_container img:nth-child(8) {
-  left: 48%;
-  top: 69%;
+  display: none;
 }
 .lang_container img:nth-child(9) {
   left: 45%;
@@ -275,6 +274,10 @@ body {
 }
 .lang_container img:nth-child(10) {
   left: 51%;
+  top: 69%;
+}
+.lang_container img:nth-child(11) {
+  left: 48%;
   top: 69%;
 }
 
