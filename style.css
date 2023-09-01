@@ -455,7 +455,8 @@ body {
   }
 
   .lang_container img:nth-child(10) {
-    display: none;
+    left: 64%;
+    top: 66%;
   }
 
   .lang_container img:nth-child(11) {
