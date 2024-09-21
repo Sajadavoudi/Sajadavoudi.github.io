@@ -303,20 +303,15 @@ body {
 /*888888888888888888888888888888888888888888888888888888888*/
 
 /* SMALL DEVICE */
+/* SMALL DEVICE */
 @media screen and (max-width: 767px) {
-  /*------------------------CONTACT--------------- -----------------*/
-  .button-container2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Optional: to vertically center within the viewport */
-  }
-
   .button {
     font-family: "space";
     font-size: 0.95em;
     letter-spacing: 1px;
-    /* Removed left and top properties for proper centering */
+    display: block;
+    margin: 0 auto; /* This will center the button */
+    top: 50%;
     box-shadow: 0 0 18em 5em var(--clr-red), 0 0 19em 0.5em var(--clr-white);
     color: var(--clr-red);
     border: var(--clr-red) 1px solid;
@@ -334,6 +329,7 @@ body {
     background: var(--clr-red);
   }
 }
+
 
 
 /* SMAL DEVICE */
