@@ -301,36 +301,34 @@ body {
 /*---------------------------------------------------------*/
 /*---------------------------------------------------------*/
 /*888888888888888888888888888888888888888888888888888888888*/
-
-/* SMAL DEVICE */
-
+/* SMALL DEVICE */
 @media screen and (max-width: 767px) {
-  /*------------------------CONTACT--------------- -----------------*/
   .button {
     font-family: "space";
     font-size: 0.95em;
     letter-spacing: 1px;
-    left: 16%;
+    position: relative; /* Change from fixed to relative */
+    margin: 0 auto; /* This will center the button */
     top: 50%;
     box-shadow: 0 0 18em 5em var(--clr-red), 0 0 19em 0.5em var(--clr-white);
     color: var(--clr-red);
     border: var(--clr-red) 1px solid;
     padding: 0.25em 1em;
     border-radius: 0.55em;
-
     text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
-
-    /*shadow dar halati ke do rang nabashe : box-shadow: 0 0 4em 6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);*/
-    /*transform: perspective(-1em) rotateX(400deg) scale(100.9, 110.8);*/
   }
 
   .button::before {
     background: transparent;
   }
+
   .button::after {
     box-shadow: 0 0 4em 0.6em var(--clr-red), 0 0 1em 0.2em var(--clr-white);
     background: var(--clr-red);
   }
+}
+
+
 
   /* negash kon, you will get it!
   .button::before {
