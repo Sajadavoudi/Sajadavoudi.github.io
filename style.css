@@ -302,9 +302,44 @@ body {
 /*---------------------------------------------------------*/
 /*888888888888888888888888888888888888888888888888888888888*/
 
-/* SMAL DEVICE */
+/* SMALL DEVICE */
 @media screen and (max-width: 767px) {
   /*------------------------CONTACT--------------- -----------------*/
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional: to vertically center within the viewport */
+  }
+
+  .button {
+    font-family: "space";
+    font-size: 0.95em;
+    letter-spacing: 1px;
+    /* Removed left and top properties for proper centering */
+    box-shadow: 0 0 18em 5em var(--clr-red), 0 0 19em 0.5em var(--clr-white);
+    color: var(--clr-red);
+    border: var(--clr-red) 1px solid;
+    padding: 0.25em 1em;
+    border-radius: 0.55em;
+    text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
+  }
+
+  .button::before {
+    background: transparent;
+  }
+
+  .button::after {
+    box-shadow: 0 0 4em 0.6em var(--clr-red), 0 0 1em 0.2em var(--clr-white);
+    background: var(--clr-red);
+  }
+}
+
+
+/* SMAL DEVICE */
+/*
+@media screen and (max-width: 767px) {
+  /*------------------------CONTACT--------------- -----------------
   .button {
     font-family: "space";
     font-size: 0.95em;
@@ -320,7 +355,7 @@ body {
     text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
 
     /*shadow dar halati ke do rang nabashe : box-shadow: 0 0 4em 6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);*/
-    /*transform: perspective(-1em) rotateX(400deg) scale(100.9, 110.8);*/
+    /*transform: perspective(-1em) rotateX(400deg) scale(100.9, 110.8);
   }
 
   .button::before {
@@ -330,7 +365,7 @@ body {
     box-shadow: 0 0 4em 0.6em var(--clr-red), 0 0 1em 0.2em var(--clr-white);
     background: var(--clr-red);
   }
-
+*/
   /* negash kon, you will get it!
   .button::before {
     box-shadow: 0 0 4em 6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
