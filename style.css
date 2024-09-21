@@ -310,7 +310,7 @@ body {
     font-family: "space";
     font-size: 0.95em;
     letter-spacing: 1px;
-    left: 50%;
+    left: 25%;
     top: 50%;
     box-shadow: 0 0 18em 5em var(--clr-red), 0 0 19em 0.5em var(--clr-white);
     color: var(--clr-red);
