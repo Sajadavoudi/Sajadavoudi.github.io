@@ -305,7 +305,7 @@ body {
 /* SMALL DEVICE */
 @media screen and (max-width: 767px) {
   /*------------------------CONTACT--------------- -----------------*/
-  .button-container {
+  .button-container2 {
     display: flex;
     justify-content: center;
     align-items: center;
